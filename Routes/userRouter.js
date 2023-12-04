@@ -8,7 +8,7 @@ userRouter.post("/contacts",async (req,res)=>{
     try {
      let userData=new UserModel(req.body);
      await userData.save();
-     res.status(200).send({message:"Contact Added Successfully!"})
+     res.status(200).send({message:"Contact Added Successfully!",userData})
     } catch (error) {
      res.status(404).send({message:"Error"})
     }
